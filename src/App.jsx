@@ -41,13 +41,6 @@ function App() {
                 <CTAButton />
               </div>
 
-              {/* WhiteBit Partner Badge */}
-              <div className="mb-4 flex items-center justify-center gap-2 text-sm md:text-base">
-                <span className="text-gray-400">🤝</span>
-                <span className="text-gray-300">Офіційний партнер</span>
-                <span className="font-semibold neon-text-green">WhiteBit</span>
-              </div>
-
               <p className="text-gray-500 text-xs md:text-sm font-light">
                 &copy; 2025 YaRich. All rights reserved.
               </p>
@@ -59,6 +52,13 @@ function App() {
                   @marketmakercrypto
                 </a>
               </p>
+
+              {/* WhiteBit Partner Badge */}
+              <div className="mt-4 flex items-center justify-center gap-2 text-sm md:text-base">
+                <span className="text-gray-400">🤝</span>
+                <span className="text-gray-300">Офіційний партнер</span>
+                <span className="font-semibold neon-text-cyan">WhiteBit</span>
+              </div>
             </div>
           </footer>
         </section>

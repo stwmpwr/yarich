@@ -76,11 +76,11 @@ export default function Stats() {
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4"></div>
 
         <p className="text-center text-lg md:text-xl text-gray-300 mb-4">
-          Понад 400 трейдерів вже з нами, приєднуйся і ти?
+          Понад 450 трейдерів вже з нами, приєднуйся і ти?
         </p>
 
         <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-2xl mx-auto">
-          <StatCard number={400} suffix="+" label="Учасників" color="green" />
+          <StatCard number={450} suffix="+" label="Учасників" color="green" />
           <StatCard number={5} suffix="+" label="Років досвіду" color="green" />
         </div>
       </div>

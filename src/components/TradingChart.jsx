@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { createChart, CandlestickSeries } from 'lightweight-charts';
+import { detectOrderBlocks, detectFVG, detectSwingPoints } from '../utils/smcDetectors';
 
 export default function TradingChart() {
   const chartContainerRef = useRef(null);
@@ -83,6 +84,45 @@ export default function TradingChart() {
     const initialData = generateData(200);
     candlestickSeries.setData(initialData);
 
+    // ====== SMC Integration ======
+    // Detect Order Blocks
+    const orderBlocks = detectOrderBlocks(initialData);
+    console.log('Order Blocks detected:', orderBlocks.length, orderBlocks);
+
+    // Draw Order Blocks as rectangles using series markers
+    const obMarkers = [];
+    orderBlocks.forEach(block => {
+      candlestickSeries.createPriceLine({
+        price: block.high,
+        color: block.type === 'bullish' ? 'rgba(16, 185, 129, 0.5)' : 'rgba(239, 68, 68, 0.5)',
+        lineWidth: 1,
+        lineStyle: 0, // Solid
+        axisLabelVisible: false,
+        title: ''
+      });
+      candlestickSeries.createPriceLine({
+        price: block.low,
+        color: block.type === 'bullish' ? 'rgba(16, 185, 129, 0.5)' : 'rgba(239, 68, 68, 0.5)',
+        lineWidth: 1,
+        lineStyle: 0, // Solid
+        axisLabelVisible: false,
+        title: ''
+      });
+    });
+
+    // Detect and draw Liquidity Zones
+    const swingPoints = detectSwingPoints(initialData);
+    swingPoints.forEach(swing => {
+      candlestickSeries.createPriceLine({
+        price: swing.price,
+        color: swing.type === 'high' ? 'rgba(245, 158, 11, 0.7)' : 'rgba(59, 130, 246, 0.7)',
+        lineWidth: 2,
+        lineStyle: 2, // Dashed
+        axisLabelVisible: false,
+        title: ''
+      });
+    });
+
     // Автоматичне додавання нових свічок (BTC-like)
     const addNewCandle = () => {
       const lastCandle = initialData[initialData.length - 1];
@@ -107,6 +147,8 @@ export default function TradingChart() {
       }
 
       candlestickSeries.update(newCandle);
+
+      // SMC оновлення можна додати пізніше якщо потрібно
     };
 
     const interval = setInterval(addNewCandle, 1000);

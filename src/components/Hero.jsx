@@ -73,10 +73,10 @@ export default function Hero() {
           </h1>
 
           {/* Telegram handle */}
-          <div className="mb-4 md:mb-6 neon-text-green text-xs md:text-lg font-medium tracking-widest flex items-center justify-center gap-2">
-            <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse" style={{ background: '#00FF41' }} />
+          <div className="mb-4 md:mb-6 neon-text-cyan text-xs md:text-lg font-medium tracking-widest flex items-center justify-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse" style={{ background: '#00F0FF' }} />
             @marketmakercrypto
-            <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse" style={{ background: '#00FF41' }} />
+            <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse" style={{ background: '#00F0FF' }} />
           </div>
 
           {/* Value prop - rotating pain points */}
