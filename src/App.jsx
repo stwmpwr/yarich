@@ -46,7 +46,7 @@ function App() {
               </p>
               <p className="mt-2">
                 <a
-                  href="https://t.me/marketmakercrypto"
+                  href="https://t.me/+P5rMLzNO3A4zY2Qy"
                   className="neon-text-green hover:opacity-80 transition-opacity font-medium text-sm"
                 >
                   @marketmakercrypto
