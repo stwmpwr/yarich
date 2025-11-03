@@ -16,7 +16,7 @@ export default function CTAButton() {
   }, []);
 
   const handleClick = () => {
-    window.open('https://t.me/marketmakercrypto', '_blank');
+    window.open('https://t.me/+P5rMLzNO3A4zY2Qy', '_blank');
   };
 
   const handleMouseMove = (e) => {
