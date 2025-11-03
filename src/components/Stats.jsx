@@ -75,6 +75,10 @@ export default function Stats() {
         {/* Divider */}
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4"></div>
 
+        <p className="text-center text-xl md:text-2xl font-bold mb-4 neon-text-green">
+          Зможеш отримати відповідь на будь-яке питання безкоштовно
+        </p>
+
         <p className="text-center text-lg md:text-xl text-gray-300 mb-4">
           Понад 450 трейдерів вже з нами, приєднуйся і ти?
         </p>
